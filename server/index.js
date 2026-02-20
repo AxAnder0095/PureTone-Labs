@@ -9,7 +9,7 @@ const server = app.listen(PORT, async () => {
 });
 
 const handleShutdown = async (signal) => {
-    console.log(`Received ${signal}. Shutting down gracefully...`);
+    console.log(`Received ${signal}. Shutting down...`);
 
     server.close(async () => {
         console.log("HTTP server closed");
