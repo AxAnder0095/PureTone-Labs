@@ -1,52 +1,227 @@
 [
   {
-    "name": "PureTone Aether X1",
-    "description": "Wireless over-ear headphones with adaptive noise cancellation and 40-hour battery life. Built for deep focus and immersive soundscapes.",
-    "price": 199
+    "brand": "PureTone Clarity Air",
+    "description": "Lightweight wireless over-ear headphones with immersive sound and active noise cancellation.",
+    "price": 249.99,
+    "stock": 30,
+    "specifications": {
+      "bluetooth": true,
+      "noiseCancellation": true,
+      "batteryLife": "28 hours",
+      "color": [
+        "Black",
+        "Silver"
+      ]
+    }
   },
   {
-    "name": "PureTone Pulse Pro",
-    "description": "Balanced studio-grade tuning with punchy bass and crystal-clear highs. Perfect for creators and casual listeners alike.",
-    "price": 149
+    "brand": "PureTone Aether X1",
+    "description": "Premium noise-cancelling headphones engineered for deep bass and crystal-clear highs.",
+    "price": 329.99,
+    "stock": 18,
+    "specifications": {
+      "bluetooth": true,
+      "noiseCancellation": true,
+      "batteryLife": "32 hours",
+      "color": [
+        "Midnight Black",
+        "Arctic White"
+      ]
+    }
   },
   {
-    "name": "PureTone Nova ANC",
-    "description": "Hybrid active noise cancellation with smart ambient mode. Designed for commuters and travelers who want total control of their sound environment.",
-    "price": 229
+    "brand": "PureTone Pulse Pro",
+    "description": "Studio-inspired wireless headphones with rich balanced sound and all-day comfort.",
+    "price": 199.99,
+    "stock": 45,
+    "specifications": {
+      "bluetooth": true,
+      "noiseCancellation": false,
+      "batteryLife": "30 hours",
+      "color": [
+        "Black",
+        "Blue",
+        "Red"
+      ]
+    }
   },
   {
-    "name": "PureTone Echo Lite",
-    "description": "Lightweight on-ear headphones with surprising clarity and comfort. Affordable everyday performance without compromise.",
-    "price": 79
+    "brand": "PureTone Nova Elite",
+    "description": "High-performance headphones with adaptive noise cancellation and premium design.",
+    "price": 379.99,
+    "stock": 12,
+    "specifications": {
+      "bluetooth": true,
+      "noiseCancellation": true,
+      "batteryLife": "35 hours",
+      "color": [
+        "Graphite",
+        "Champagne Gold"
+      ]
+    }
   },
   {
-    "name": "PureTone Vibe Studio",
-    "description": "Professional over-ear monitoring headphones with ultra-accurate frequency response. Built for mixing, mastering, and serious listening.",
-    "price": 249
+    "brand": "PureTone Echo Lite",
+    "description": "Affordable wireless headphones delivering powerful bass and extended battery life.",
+    "price": 129.99,
+    "stock": 60,
+    "specifications": {
+      "bluetooth": true,
+      "noiseCancellation": false,
+      "batteryLife": "40 hours",
+      "color": [
+        "Black",
+        "Teal"
+      ]
+    }
   },
   {
-    "name": "PureTone Drift Wireless",
-    "description": "Minimalist design meets rich dynamic sound. Features Bluetooth 5.3 and fast charging for life on the move.",
-    "price": 129
+    "brand": "PureTone Zenith Max",
+    "description": "Flagship over-ear headphones with premium materials and immersive surround sound.",
+    "price": 449.99,
+    "stock": 10,
+    "specifications": {
+      "bluetooth": true,
+      "noiseCancellation": true,
+      "batteryLife": "38 hours",
+      "color": [
+        "Obsidian Black",
+        "Silver"
+      ]
+    }
   },
   {
-    "name": "PureTone ZenPods Max",
-    "description": "Premium comfort fit with spatial audio support and 35-hour battery life. Engineered for immersive entertainment.",
-    "price": 179
+    "brand": "PureTone Flux Studio",
+    "description": "Professional wired headphones built for studio monitoring and precision audio.",
+    "price": 159.99,
+    "stock": 25,
+    "specifications": {
+      "bluetooth": false,
+      "noiseCancellation": false,
+      "batteryLife": "Wired",
+      "color": [
+        "Black"
+      ]
+    }
   },
   {
-    "name": "PureTone Rogue Bass X",
-    "description": "Extra-deep bass drivers with enhanced low-frequency tuning. Perfect for EDM, hip-hop, and high-energy playlists.",
-    "price": 159
+    "brand": "PureTone Vibe Core",
+    "description": "Compact wireless headphones with punchy sound and ergonomic comfort.",
+    "price": 149.99,
+    "stock": 35,
+    "specifications": {
+      "bluetooth": true,
+      "noiseCancellation": false,
+      "batteryLife": "26 hours",
+      "color": [
+        "Black",
+        "Purple"
+      ]
+    }
   },
   {
-    "name": "PureTone Clarity Air",
-    "description": "Breathable ear cushions and clean acoustic design. Ideal for long listening sessions without fatigue.",
-    "price": 99
+    "brand": "PureTone Stratos X",
+    "description": "Advanced noise-cancelling headphones designed for travel and daily commuting.",
+    "price": 289.99,
+    "stock": 22,
+    "specifications": {
+      "bluetooth": true,
+      "noiseCancellation": true,
+      "batteryLife": "30 hours",
+      "color": [
+        "Matte Black",
+        "Steel Gray"
+      ]
+    }
   },
   {
-    "name": "PureTone Orbit Elite",
-    "description": "Flagship model with premium aluminum build, high-resolution audio support, and advanced adaptive noise cancellation.",
-    "price": 299
+    "brand": "PureTone Sonic Edge",
+    "description": "Gaming-focused wired headphones with immersive stereo sound and low latency.",
+    "price": 119.99,
+    "stock": 40,
+    "specifications": {
+      "bluetooth": false,
+      "noiseCancellation": false,
+      "batteryLife": "Wired",
+      "color": [
+        "Black",
+        "Neon Green"
+      ]
+    }
+  },
+  {
+    "brand": "PureTone Horizon ANC",
+    "description": "Wireless headphones with hybrid active noise cancellation and premium comfort padding.",
+    "price": 269.99,
+    "stock": 20,
+    "specifications": {
+      "bluetooth": true,
+      "noiseCancellation": true,
+      "batteryLife": "34 hours",
+      "color": [
+        "Black",
+        "White"
+      ]
+    }
+  },
+  {
+    "brand": "PureTone Aero Flex",
+    "description": "Lightweight foldable headphones with dynamic drivers and long-lasting battery.",
+    "price": 139.99,
+    "stock": 55,
+    "specifications": {
+      "bluetooth": true,
+      "noiseCancellation": false,
+      "batteryLife": "36 hours",
+      "color": [
+        "Black",
+        "Sky Blue"
+      ]
+    }
+  },
+  {
+    "brand": "PureTone Quantum Pro",
+    "description": "High-fidelity headphones with ultra-deep bass and crystal-clear treble response.",
+    "price": 319.99,
+    "stock": 16,
+    "specifications": {
+      "bluetooth": true,
+      "noiseCancellation": true,
+      "batteryLife": "33 hours",
+      "color": [
+        "Black",
+        "Crimson Red"
+      ]
+    }
+  },
+  {
+    "brand": "PureTone Drift Wireless",
+    "description": "Everyday wireless headphones offering smooth audio and extended comfort.",
+    "price": 159.99,
+    "stock": 42,
+    "specifications": {
+      "bluetooth": true,
+      "noiseCancellation": false,
+      "batteryLife": "29 hours",
+      "color": [
+        "Black",
+        "Gray"
+      ]
+    }
+  },
+  {
+    "brand": "PureTone Titan X Pro",
+    "description": "Luxury over-ear headphones with premium build quality and advanced sound isolation.",
+    "price": 499.99,
+    "stock": 8,
+    "specifications": {
+      "bluetooth": true,
+      "noiseCancellation": true,
+      "batteryLife": "40 hours",
+      "color": [
+        "Black",
+        "Gold"
+      ]
+    }
   }
 ]

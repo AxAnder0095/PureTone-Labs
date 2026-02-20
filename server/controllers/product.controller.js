@@ -26,7 +26,7 @@ export const createProduct = async (req, res) => {
     const product = req.body;
     try {
         const newProduct = await productService.addProduct(product);
-        res.status(201).json({ product: newProduct });
+        res.status(201).json({ success: true, product: newProduct });
     } catch (error) {
         res.status(400).json({ error: error.message });;
     };
