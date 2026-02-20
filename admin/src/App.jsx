@@ -15,7 +15,7 @@ function App() {
   return (
     <div className='App'>
       <h1>PureTone Labs</h1>
-      <h2>Welcome to the PureTone Labs full-stack application!</h2>
+      <h2>Welcome to the PureTone Labs Admin Panel!</h2>
       {message && <p>{message}</p>}
     </div>
   )
