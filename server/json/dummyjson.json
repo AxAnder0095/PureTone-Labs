@@ -1,0 +1,52 @@
+[
+  {
+    "name": "PureTone Aether X1",
+    "description": "Wireless over-ear headphones with adaptive noise cancellation and 40-hour battery life. Built for deep focus and immersive soundscapes.",
+    "price": 199
+  },
+  {
+    "name": "PureTone Pulse Pro",
+    "description": "Balanced studio-grade tuning with punchy bass and crystal-clear highs. Perfect for creators and casual listeners alike.",
+    "price": 149
+  },
+  {
+    "name": "PureTone Nova ANC",
+    "description": "Hybrid active noise cancellation with smart ambient mode. Designed for commuters and travelers who want total control of their sound environment.",
+    "price": 229
+  },
+  {
+    "name": "PureTone Echo Lite",
+    "description": "Lightweight on-ear headphones with surprising clarity and comfort. Affordable everyday performance without compromise.",
+    "price": 79
+  },
+  {
+    "name": "PureTone Vibe Studio",
+    "description": "Professional over-ear monitoring headphones with ultra-accurate frequency response. Built for mixing, mastering, and serious listening.",
+    "price": 249
+  },
+  {
+    "name": "PureTone Drift Wireless",
+    "description": "Minimalist design meets rich dynamic sound. Features Bluetooth 5.3 and fast charging for life on the move.",
+    "price": 129
+  },
+  {
+    "name": "PureTone ZenPods Max",
+    "description": "Premium comfort fit with spatial audio support and 35-hour battery life. Engineered for immersive entertainment.",
+    "price": 179
+  },
+  {
+    "name": "PureTone Rogue Bass X",
+    "description": "Extra-deep bass drivers with enhanced low-frequency tuning. Perfect for EDM, hip-hop, and high-energy playlists.",
+    "price": 159
+  },
+  {
+    "name": "PureTone Clarity Air",
+    "description": "Breathable ear cushions and clean acoustic design. Ideal for long listening sessions without fatigue.",
+    "price": 99
+  },
+  {
+    "name": "PureTone Orbit Elite",
+    "description": "Flagship model with premium aluminum build, high-resolution audio support, and advanced adaptive noise cancellation.",
+    "price": 299
+  }
+]
