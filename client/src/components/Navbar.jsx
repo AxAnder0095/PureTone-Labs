@@ -4,6 +4,8 @@ import { BsCart3 } from "react-icons/bs";
 import { useProducts } from "../context/ProductsContext.jsx";
 import { GiBubblingFlask } from "react-icons/gi";
 import { IoIosFlask } from "react-icons/io";
+import { IoBagHandleOutline } from "react-icons/io5";
+
 
 
 export const Navbar = () => {
@@ -25,7 +27,7 @@ export const Navbar = () => {
                     </div>
                     <div className="nav-cart-container">
                         <NavLink to="/cart" className={({isActive}) => isActive ? 'cart-link active' : 'cart-link'}>
-                            <BsCart3 className="cart-icon" />
+                            <IoBagHandleOutline className="cart-icon" />
                             {cart.length > 0 && <span className="cart-count">{cart.length}</span>}
                         </NavLink>
                     </div>

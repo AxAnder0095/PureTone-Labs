@@ -1,4 +1,5 @@
 import { Hero } from '../components/Hero.jsx';
+import '../styles/Home.scss'
 
 export const Home = () => {
 

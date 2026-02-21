@@ -21,6 +21,7 @@ export const Cart = () => {
                 <article className='cart-nav'>
                     <Navbar />
                 </article>
+                <button onClick={() => setCart([])}>Empty Cart</button>
                 {cartItems()}
                 {cart.length === 0 ? (
                     <p>Your cart is empty</p>
@@ -43,7 +44,6 @@ export const Cart = () => {
                         ))}
                     </ul>
                 )}
-                <button onClick={() => setCart([])}>Empty Cart</button>
             </section>
         </div>
     )

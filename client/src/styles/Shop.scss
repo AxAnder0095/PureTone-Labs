@@ -1,0 +1,15 @@
+.Shop {
+    display: flex;
+
+    .shop-section {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .shop-nav {
+            background-color: #111111;
+            width: 100%;
+        }
+    }
+}

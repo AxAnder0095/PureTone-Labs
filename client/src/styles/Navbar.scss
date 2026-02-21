@@ -1,5 +1,5 @@
 $primary: #111111;
-$accent: #71fc21;
+$accent: #56FF7A;
 $secondary: #1F2937;
 $background: #F3F4F6;
 
@@ -7,14 +7,29 @@ $background: #F3F4F6;
     display: flex;
     justify-content: center;
     padding: 3rem 6rem;
-    font-size: 1.7rem;
+    font-size: 1.5rem;
 
     .nav {
         display: flex;
         justify-content: space-between;
         width: 100%;
         max-width: 1400px;
-        // border-bottom: 1px solid white;
+        // border: 1px solid white;
+
+        // background: rgba(255, 255, 255, 0.1);
+        // /* transparency */
+        // backdrop-filter: blur(15px);
+        // /* blur background */
+        // -webkit-backdrop-filter: blur(15px);
+        // /* Safari support */
+
+        // border: 1px solid rgba(255, 255, 255, 0.2);
+        // border-radius: 1rem;
+
+        // box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+
+        // padding: 1rem;
+
 
         .nav-brand {
             display: flex;
@@ -55,17 +70,18 @@ $background: #F3F4F6;
                     gap: 0.5rem;
                     text-decoration: none;
                     color: rgba($color: #ffffff, $alpha: 0.7);
-                    border-bottom: 1px solid rgba($color: $background, $alpha: 0);
+                    // border-bottom: 1px solid rgba($color: $background, $alpha: 0);
+                    // padding-bottom: 0.5rem;
 
                     &:hover {
-                        border-bottom: 1px solid rgba($color: #FFF, $alpha: 1.0);
+                        // border-bottom: 1px solid rgba($color: #FFF, $alpha: 1.0);
                         color: rgba($color: #FFF, $alpha: 1.0)
                     }
                 }
 
                 .link.active {
-                    color: rgba($color: #FFF, $alpha: 1);
-                    border-bottom: 2px solid rgba($color: #FFF, $alpha: 1.0);
+                    color: rgba($color: $accent, $alpha: 1);
+                    // border-bottom: 2px solid rgba($color: #FFF, $alpha: 1.0);
                 }
             }
         }
@@ -103,7 +119,7 @@ $background: #F3F4F6;
             }
 
             .cart-link.active {
-                color: rgba($color: #FFF, $alpha: 1);
+                color: rgba($color: $accent, $alpha: 1);
             }
         }
     }
