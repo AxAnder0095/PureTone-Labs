@@ -1,5 +1,9 @@
 .hero {
-        min-height: 60vh;
-        // background-color: #020f00;
-        background-color: #05000f;
+        height: 60vh;
+        position: relative;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        background-image: url('../imgs/hero.jpg');
+        background-size: cover;
+        background-position: center;
+        overflow: hidden;
 }

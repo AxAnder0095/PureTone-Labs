@@ -6,10 +6,10 @@ const CART_STORAGE_KEY = "puretone_cart";
 
 export const ProductsProvider = ({ children }) => {
     const [products, setProducts] = useState([]);
-    const [cart, setCart] = useState(() => {
+    const [cart, setCart] = useState(() => { 
         try {
             const storedCart = localStorage.getItem(CART_STORAGE_KEY);
-            return storedCart ? JSON.parse(storedCart) : [];
+            return storedCart ? JSON.parse(storedCart) : []; // Date type for useState is now an array of objects.
         } catch (error) {
             console.error("Error reading cart from localStorage:", error);
             return [];
@@ -27,11 +27,11 @@ export const ProductsProvider = ({ children }) => {
         }
     };
 
-    useEffect(() => {
+    useEffect(() => { // Fetch products on mount
         fetchProducts();
     }, []);
 
-    useEffect(() => {
+    useEffect(() => { // Save cart to localStorage whenever it changes
         try {
             localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(cart));
         } catch (error) {

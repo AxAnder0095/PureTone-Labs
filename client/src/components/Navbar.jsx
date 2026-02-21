@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import '../styles/Navbar.scss'
 import { BsCart3 } from "react-icons/bs";
 import { useProducts } from "../context/ProductsContext.jsx";
@@ -14,8 +14,8 @@ export const Navbar = () => {
         <header className="nav-container">
             <nav className="nav">
                 <div className="nav-brand">
-                    <IoIosFlask className="nav-icon" />
-                    <NavLink to="/" className={'nav-logo'}>PureTone Labs</NavLink>
+                    {/* <IoIosFlask className="nav-icon" /> */}
+                    <Link to="/" className={'nav-logo'}>PureTone Labs</Link>
                 </div>
                 <div className="nav-services">
                     <div className="nav-links">
@@ -24,8 +24,10 @@ export const Navbar = () => {
                         <NavLink to="/about" className={({isActive}) => isActive ? 'link active' : 'link'}>About</NavLink>
                     </div>
                     <div className="nav-cart-container">
-                        <BsCart3 />
-                        {cart.length > 0 && <span className="cart-count">{cart.length}</span>}
+                        <NavLink to="/cart" className={({isActive}) => isActive ? 'cart-link active' : 'cart-link'}>
+                            <BsCart3 className="cart-icon" />
+                            {cart.length > 0 && <span className="cart-count">{cart.length}</span>}
+                        </NavLink>
                     </div>
                 </div>
             </nav>
