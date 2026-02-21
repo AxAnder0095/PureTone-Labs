@@ -1,26 +1,38 @@
 $primary: #111111;
-$accent: #2263c5;
+$accent: #71fc21;
 $secondary: #1F2937;
 $background: #F3F4F6;
 
 .nav-container {
     display: flex;
+    justify-content: center;
     padding: 3rem 6rem;
-    background-color: $background;
     font-size: 1.5rem;
-    border-bottom: 1px solid rgba($color: #000000, $alpha: 0.5);
 
     .nav {
         display: flex;
         justify-content: space-between;
         width: 100%;
+        max-width: 1400px;
 
         .nav-brand {
+            display: flex;
+            align-items: center;
+
             .nav-logo {
+                display: flex;
+                align-items: center;
                 text-decoration: none;
-                color: rgba($color: #000000, $alpha: 0.8);
+                color: rgba($color: #ffffff, $alpha: 0.8);
                 font-weight: 700;
+            }
+
+            .nav-icon {
+                display: inherit;
+                align-items: start;
+                color: rgba($color: $accent, $alpha: 1.0);
                 font-size: 2rem;
+                margin-right: 0.5rem;
             }
         }
 
@@ -31,31 +43,50 @@ $background: #F3F4F6;
             .nav-links {
                 display: flex;
                 align-items: center;
-                gap: 1rem;
-
+                gap: 2rem;
+             
                 .link {
                     display: flex;
                     align-items: center;
                     gap: 0.5rem;
                     text-decoration: none;
-                    color: rgba($color: #000000, $alpha: 0.5);
+                    color: rgba($color: #ffffff, $alpha: 0.5);
+                    border-bottom: 1px solid rgba($color: $background, $alpha: 0);
 
                     &:hover {
-                        color: rgba($color: #000000, $alpha: 0.9);
-                        transition: color 0.3s ease;
+                        border-bottom: 1px solid rgba($color: $accent, $alpha: 1.0);
+                        color: rgba($color: #FFF, $alpha: 1.0)
                     }
                 }
 
                 .link.active {
                     color: rgba($color: $accent, $alpha: 1);
-                    font-weight: 600;
                 }
             }
         }
 
         .nav-cart-container {
+            position: relative;
             display: flex;
             align-items: center;
+            color: rgba($color: #ffffff, $alpha: 0.5);
+            font-size: 2.5rem;
+            padding: 0.5rem;
+
+            .cart-count {
+                position: absolute;
+                top: -0.2rem;
+                right: -0.2rem;
+                background-color: rgba($color: $accent, $alpha: 1.0);
+                color: $primary;
+                border-radius: 50%;
+                width: 1.7rem;
+                height: 1.7rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 1rem;
+            }
         }
     }
 }
