@@ -1,7 +1,12 @@
 import { NavLink } from "react-router-dom";
 import '../styles/Navbar.scss'
+import { BsCart3 } from "react-icons/bs";
+import { useProducts } from "../context/ProductsContext.jsx";
 
 export const Navbar = () => {
+    const { cart } = useProducts();
+
+    // console.log('%cNavbar cart state:', 'color: red; font-weight: bold;', cart);
     return (
         <header className="nav-container">
             <nav className="nav">
@@ -16,7 +21,8 @@ export const Navbar = () => {
                         <NavLink to="/services" className={({isActive}) => isActive ? 'link active' : 'link'}>Services</NavLink>
                     </div>
                     <div className="nav-cart-container">
-                        <p>Icon of cart here</p>
+                        <BsCart3 size={24} />
+                        {cart.length > 0 && <span className="cart-count">{cart.length}</span>}
                     </div>
                 </div>
             </nav>

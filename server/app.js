@@ -1,5 +1,5 @@
 import express from 'express';
-// import cors from 'cors';
+import cors from 'cors';
 import testRoute from './routes/test.route.js';
 import productRoute from './routes/product.route.js';
 
@@ -7,7 +7,9 @@ import productRoute from './routes/product.route.js';
 const app = express();
 
  // Middleware
-// app.use(cors()); // Allow requests from the React frontend running on localhost:5173
+app.use(cors({
+	origin: 'http://localhost:5173',
+}));
 app.use(express.json());
 
 // Routes

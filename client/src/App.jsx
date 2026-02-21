@@ -1,18 +1,18 @@
-import { useState, useEffect } from 'react'
+import { useState} from 'react'
 import { Navbar } from './components/Navbar.jsx';
+import { useProducts } from './context/ProductsContext.jsx';
 import './App.css'
 
 function App() {
   const [message, setMessage] = useState('');
+  const { cart, setCart } = useProducts();
 
-  // Example of fetching data from the backend when the component mounts
-  // useEffect(() => {
-  //   // Fetch the test message from the backend
-  //   fetch('/api/test')
-  //     .then(response => response.json())
-  //     .then(data => setMessage(data.message))
-  //     .catch(error => console.error('Error fetching test message:', error));
-  // }, []);
+  const handleAddToCart = () => {
+    const newCart = [...cart, { id: cart.length + 1, name: `Product: Headphones` }];
+    setCart(newCart);
+    setMessage(`Added Product ${cart.length + 1} to cart!`);
+  }
+
 
   return (
     <div className='App'>
@@ -20,6 +20,7 @@ function App() {
       <h1>PureTone Labs</h1>
       <h2>Welcome to the PureTone Labs full-stack application!</h2>
       {message && <p>{message}</p>}
+      <button onClick={handleAddToCart}>Add to Cart</button>
     </div>
   )
 }
