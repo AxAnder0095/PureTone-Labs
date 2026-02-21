@@ -7,13 +7,14 @@ $background: #F3F4F6;
     display: flex;
     justify-content: center;
     padding: 3rem 6rem;
-    font-size: 1.5rem;
+    font-size: 1.7rem;
 
     .nav {
         display: flex;
         justify-content: space-between;
         width: 100%;
         max-width: 1400px;
+        // border-bottom: 1px solid white;
 
         .nav-brand {
             display: flex;
@@ -25,6 +26,9 @@ $background: #F3F4F6;
                 text-decoration: none;
                 color: rgba($color: #ffffff, $alpha: 0.8);
                 font-weight: 700;
+                font-family: "Bungee", sans-serif;
+                font-style: normal;
+                font-size: 2.3rem;
             }
 
             .nav-icon {
@@ -38,29 +42,30 @@ $background: #F3F4F6;
 
         .nav-services {
             display: flex;
-            gap: 2rem;
+            gap: 4rem;
 
             .nav-links {
                 display: flex;
                 align-items: center;
-                gap: 2rem;
+                gap: 3rem;
 
                 .link {
                     display: flex;
                     align-items: center;
                     gap: 0.5rem;
                     text-decoration: none;
-                    color: rgba($color: #ffffff, $alpha: 0.5);
+                    color: rgba($color: #ffffff, $alpha: 0.7);
                     border-bottom: 1px solid rgba($color: $background, $alpha: 0);
 
                     &:hover {
-                        border-bottom: 1px solid rgba($color: $accent, $alpha: 1.0);
+                        border-bottom: 1px solid rgba($color: #FFF, $alpha: 1.0);
                         color: rgba($color: #FFF, $alpha: 1.0)
                     }
                 }
 
                 .link.active {
-                    color: rgba($color: $accent, $alpha: 1);
+                    color: rgba($color: #FFF, $alpha: 1);
+                    border-bottom: 2px solid rgba($color: #FFF, $alpha: 1.0);
                 }
             }
         }
@@ -69,8 +74,8 @@ $background: #F3F4F6;
             position: relative;
             display: flex;
             align-items: center;
-            color: rgba($color: #ffffff, $alpha: 0.5);
-            font-size: 2.5rem;
+            color: rgba($color: #ffffff, $alpha: 0.7);
+            font-size: 2.3rem;
             padding: 0.5rem;
 
             .cart-link {
@@ -98,7 +103,7 @@ $background: #F3F4F6;
             }
 
             .cart-link.active {
-                color: rgba($color: $accent, $alpha: 1);
+                color: rgba($color: #FFF, $alpha: 1);
             }
         }
     }

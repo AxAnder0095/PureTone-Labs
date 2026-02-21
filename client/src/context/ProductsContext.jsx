@@ -27,9 +27,9 @@ export const ProductsProvider = ({ children }) => {
         }
     };
 
-    useEffect(() => { // Fetch products on mount
-        fetchProducts();
-    }, []);
+    // useEffect(() => { // Fetch products on mount
+    //     fetchProducts();
+    // }, []);
 
     useEffect(() => { // Save cart to localStorage whenever it changes
         try {
