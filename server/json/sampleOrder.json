@@ -1,0 +1,27 @@
+{
+  "orderItems": [
+    {
+      "product": "6998e51b0007dabaeb4589f5",
+      "name": "PureTone Aether X1",
+      "quantity": 2,
+      "price": 329
+    }
+  ],
+  "customerInfo": {
+    "fullName": "Alex Brown",
+    "email": "alex@email.com",
+    "phone": "555-123-4567"
+  },
+  "shippingAddress": {
+    "address": "123 Main St",
+    "city": "Chicago",
+    "postalCode": "60185",
+    "country": "USA"
+  },
+  "paymentInfo": {
+    "method": "stripe",
+    "paymentId": "pi_123456",
+    "status": "pending"
+  },
+  "totalPrice": 340
+}
