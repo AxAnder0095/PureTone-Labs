@@ -33,10 +33,10 @@ export const Shop = () => {
                 <article className='shop-nav'>
                     <Navbar />
                 </article>
+                <button onClick={handleAddToCart}>Add to Cart</button>
                 <h1>Shop</h1>
                 <h2>Browse our collection of high-quality audio products</h2>
                 <p>Explore our range of headphones, speakers, and audio accessories designed to deliver pure, <br /> immersive sound. Whether you're an audiophile or just looking for great sound quality, PureTone Labs has something for everyone.</p>
-                <button onClick={handleAddToCart}>Add to Cart</button>
             </section>
         </div>
     )
