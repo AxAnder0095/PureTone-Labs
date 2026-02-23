@@ -11,5 +11,72 @@
             background-color: #111111;
             width: 100%;
         }
+
+        .shop-content {
+            // border: 1px solid black;
+            margin-top: 2rem;
+            width: 100%;
+            max-width: 1400px;
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+
+            .shop-hero {
+                background:
+                    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+                    url('../imgs/shopHero.jpg');
+                background-size: cover;
+                background-position: 80% center;
+                background-repeat: no-repeat;
+                height: 600px;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                color: white;
+
+                .shop-title {
+                    font-family: "Bungee", sans-serif;
+                    font-style: normal;
+                    font-size: 3.5rem;
+                }
+
+                .shop-subtitle {
+                    font-size: 1.5rem;
+                    opacity: 0.8;
+                }
+            }
+
+            .shop-products {
+                display: grid;
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                gap: 0.25rem;
+
+                .shop-product-card {
+                    background-color: white;
+
+                    .shop-product-card-inner {
+                        padding: 1rem;
+
+                        .shop-product-card-header {
+                            display: flex;
+                            justify-content: space-between;
+                            margin-bottom: 0.5rem;
+
+                            .product-brand {
+                                font-weight: bold;
+                                font-size: 1.4rem;
+                            }
+
+                            .product-price {
+                                font-size: 1.2rem;
+                                opacity: 0.8;
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }

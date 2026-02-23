@@ -1,30 +1,15 @@
 import { Hero } from "../components/Hero.jsx";
 import { Navbar } from "../components/Navbar.jsx";
 import { useProducts } from '../context/ProductsContext.jsx';
+import { testData } from "../data/testData.jsx";
 import "../styles/Shop.scss"
 
 
 export const Shop = () => {
     const { cart, setCart } = useProducts();
 
-    const handleAddToCart = () => {
-        const newCart = [...cart,
-        {
-            brand: "PureTone Aether X1",
-            description: "Premium noise-cancelling headphones engineered for deep bass and crystal-clear highs.",
-            price: 329.99,
-            stock: 18,
-            specifications: {
-                bluetooth: true,
-                noiseCancellation: true,
-                batteryLife: "32 hours",
-                color: [
-                    "Midnight Black",
-                    "Arctic White"
-                ]
-            }
-        }
-        ];
+    const handleAddToCart = (product) => {
+        const newCart = [...cart, product];
         setCart(newCart);
     }
     return (
@@ -33,11 +18,63 @@ export const Shop = () => {
                 <article className='shop-nav'>
                     <Navbar />
                 </article>
-                <button onClick={handleAddToCart}>Add to Cart</button>
-                <h1>Shop</h1>
-                <h2>Browse our collection of high-quality audio products</h2>
-                <p>Explore our range of headphones, speakers, and audio accessories designed to deliver pure, <br /> immersive sound. Whether you're an audiophile or just looking for great sound quality, PureTone Labs has something for everyone.</p>
+                <article className='shop-content'>
+                    <div className="shop-hero">
+                        <p className="shop-title">Shop</p>
+                        <p className="shop-subtitle">Premium sound engineered for clarity and depth.</p>
+                    </div>
+                    <div className="shop-products">
+                        {testData.map((product, index) => (
+                            <div key={index} className="shop-product-card">
+                                <img src={product.image} alt={product.description} />
+                                <div className="shop-product-card-inner">
+                                    <div className="shop-product-card-header">
+                                        <p className="product-brand">{product.brand}</p>
+                                        <p className="product-price">${product.price}</p>
+                                    </div>
+                                    <p className="product-description">{product.description}</p>
+                                    <button onClick={() => handleAddToCart(product)}>Add to Cart</button>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </article>
             </section>
         </div>
     )
 };
+//                 color: [
+//                     "Midnight Black",
+//                     "Arctic White"
+//                 ]
+//             }
+//         }
+//         ];
+//         setCart(newCart);
+//     }
+//     return (
+//         <div className='Shop'>
+//             <section className='shop-section'>
+//                 <article className='shop-nav'>
+//                     <Navbar />
+//                 </article>
+//                 <article className='shop-content'>
+//                     <div className="shop-hero">
+//                         <p className="shop-title">Shop</p>
+//                         <p className="shop-subtitle">Premium sound engineered for clarity and depth.</p>
+//                     </div>
+//                     <div className="shop-products">
+//                         {testData.map((product, index) => (
+//                             <div key={index} className="shop-product">
+//                                 <p>{product.brand}</p>
+//                                 <p>{product.description}</p>
+//                                 <p>${product.price}</p>
+//                                 <button onClick={handleAddToCart}>Add to Cart</button>
+//                             </div>
+//                         ))}
+//                     </div>
+//                 </article>
+//             </section>
+//         </div>
+//     )
+// };
