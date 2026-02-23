@@ -7,7 +7,8 @@ const ORDER_STATUS = {
     PAID: "paid",
     SHIPPED: "shipped",
     DELIVERED: "delivered",
-    CANCELLED: "cancelled"
+    CANCELLED: "cancelled",
+    STRIPE: "stripe",
 };
 
 export const getAllOrders = () => Order.find().exec();
@@ -69,7 +70,7 @@ export const addOrder = async (orderData) => {
     }
 };
 
-export const markOrderAsPaid = async (orderId, paymentResult) => {
+export const markOrderAsPaid2 = async (orderId, paymentResult) => {
     const order = await Order.findById(orderId);
 
     if (!order) throw new Error("Order not found");
@@ -84,6 +85,30 @@ export const markOrderAsPaid = async (orderId, paymentResult) => {
     };
 
     order.orderStatus = ORDER_STATUS.PAID;
+    await order.save();
+    return order;
+};
+
+
+export const markOrderAsPaid = async (orderId, intent) => {
+    const order = await Order.findById(orderId);
+
+    if (!order) throw new Error("Order not found");
+
+    // Prevent double-processing (important for webhooks)
+    if (order.isPaid) return order;
+
+    order.isPaid = true;
+    order.paidAt = new Date();
+
+    order.paymentInfo = {
+        method: ORDER_STATUS.STRIPE,
+        paymentId: intent.id, // correct
+        status: ORDER_STATUS.PAID
+    };
+
+    order.orderStatus = ORDER_STATUS.PAID;
+
     await order.save();
     return order;
 };
