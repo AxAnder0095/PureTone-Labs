@@ -12,5 +12,40 @@
             background-color: #111111;
             width: 100%;
         }
+
+        .cart-content {
+            width: 100%;
+            max-width: 1400px;
+            margin-top: 4rem;
+            background-color: white;
+
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            height: 500px;
+
+            .cart-items {
+                grid-column: span 2;
+                // padding: 2rem;
+
+                .cart-items-header {
+                    display: flex;
+                    justify-content: space-between;
+                    border-bottom: 1px solid rgba($color: #000000, $alpha: 0.5);
+                    padding-bottom: 1rem;
+                    padding: 1rem;
+                }
+            }
+
+            .cart-summary {
+                // border-left: 1px solid black;
+                background-color: #E0FFE7;
+                // padding: 2rem;
+
+                .cart-summary-header {
+                    border-bottom: 1px solid rgba($color: #000000, $alpha: 0.5);
+                    padding: 1rem;
+                }
+            }
+        }
     }
 }

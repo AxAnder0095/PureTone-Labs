@@ -75,6 +75,26 @@
                             }
                         }
                     }
+
+                    .product-description {
+                        font-size: 1rem;
+                        margin-bottom: 1rem;
+                        opacity: 0.8;
+                    }
+
+                    .atc-btn{
+                        font-size: 1.5rem;
+                        border: 1px solid black;
+                        background-color: transparent;
+                        padding: 1rem 1.5rem;
+                        cursor: pointer;
+                        transition: background-color 0.3s, color 0.3s;
+
+                        &:hover {
+                            background-color: black;
+                            color: white;
+                        }
+                    }
                 }
             }
         }

@@ -1,15 +1,18 @@
-import { Hero } from "../components/Hero.jsx";
 import { Navbar } from "../components/Navbar.jsx";
 import { useProducts } from '../context/ProductsContext.jsx';
 import { testData } from "../data/testData.jsx";
 import "../styles/Shop.scss"
 
-
 export const Shop = () => {
     const { cart, setCart } = useProducts();
 
     const handleAddToCart = (product) => {
-        const newCart = [...cart, product];
+
+        if (cart.some(item => item.id === product.id)) { // Check if the product is already in the cart
+            alert("This item is already in your cart.");
+            return;
+        }
+        const newCart = [...cart, product]; // append the new product to the existing cart
         setCart(newCart);
     }
     return (
@@ -33,7 +36,7 @@ export const Shop = () => {
                                         <p className="product-price">${product.price}</p>
                                     </div>
                                     <p className="product-description">{product.description}</p>
-                                    <button onClick={() => handleAddToCart(product)}>Add to Cart</button>
+                                    <button onClick={() => handleAddToCart(product)} className="atc-btn">Add to Cart</button>
                                 </div>
                             </div>
                         ))}
