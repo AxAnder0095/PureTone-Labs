@@ -8,7 +8,7 @@ export const Shop = () => {
 
     const handleAddToCart = (product) => {
 
-        if (cart.some(item => item.id === product.id)) { // Check if the product is already in the cart
+        if (cart.some(item => item.brand === product.brand)) { // Check if the product is already in the cart
             alert("This item is already in your cart.");
             return;
         }
