@@ -42,6 +42,9 @@ export const Cart = () => {
     };
 
     useEffect(() => {
+        if (cart) {
+            console.log(`Cart before checkout:`, cart[0]);
+        }
         const fetchCheckoutConfig = async () => { // Check if Stripe is in test mode to show banner in cart
             try {
                 const { data } = await api.get('/orders/checkout-config');
@@ -61,7 +64,6 @@ export const Cart = () => {
 
         try {
             setIsCheckingOut(true);
-            console.log(`Cart before checkout:`, cart[0]);
 
             const { data } = await api.post('/orders/checkout-session', {
                 cartItems: cart
