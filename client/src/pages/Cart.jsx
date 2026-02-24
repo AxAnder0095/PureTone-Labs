@@ -1,9 +1,13 @@
+import { useState } from 'react';
 import { useProducts } from '../context/ProductsContext.jsx';
 import { Navbar } from '../components/Navbar.jsx';
 import "../styles/Cart.scss"
 
 export const Cart = () => {
     const { cart, setCart } = useProducts();
+    const salesTaxRate = 0.07; // Example sales tax rate (7%)
+    // const [subtotal, setSubtotal] = useState(0);
+    // const [finalTotal, setFinalTotal] = useState(0);
 
     const cartItems = () => {
         const count = cart.length;
@@ -23,7 +27,15 @@ export const Cart = () => {
     const getSubtotal = () => {
         const total = cart.reduce((sum, item) => sum + item.price, 0); // Calculate the total price of items in the cart
         return total.toFixed(2);
-    }
+    };
+
+    const getFinalTotal = () => {
+        const subtotal = parseFloat(getSubtotal());
+        const tax = subtotal * salesTaxRate;
+        const finalTotal = subtotal + tax;
+        return finalTotal.toFixed(2);
+    };
+
 
     return (
         <div className='Cart'>
@@ -73,8 +85,14 @@ export const Cart = () => {
                         <div className='cart-summary-header'>
                             <h2>Order Summary</h2>
                         </div>
-                        <div className='cart-summary-content'>
-                            <p>Subtotal: ${getSubtotal()}</p>
+                        <div className='cart-summary-subtotals'>
+                            <p><span>Subtotal:</span> ${getSubtotal()}</p>
+                            <p><span>Standard Shipping:</span> $0.00</p>
+                            <p><span>Sales Tax:</span> ${(parseFloat(getSubtotal()) * salesTaxRate).toFixed(2)}</p>
+                        </div>
+                        <div className='cart-summary-total'>
+                            <p><span>Total:</span> ${getFinalTotal()}</p>
+                            <button className='checkout-btn'>Checkout</button>
                         </div>
                     </div>
                 </article>

@@ -105,6 +105,47 @@
                     border-bottom: 1px solid rgba($color: #000000, $alpha: 0.5);
                     padding: 1rem;
                 }
+
+                .cart-summary-subtotals {
+                    padding: 1rem;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 1.3rem;
+                    gap: 0.5rem;
+                    border: 1px solid rgba($color: #000000, $alpha: 0.5);
+
+                    p {
+                        border: 1px solid black;
+                        display: flex;
+                        justify-content: space-between;
+                        width: 100%;
+                    }
+                }
+
+                .cart-summary-total {
+                    margin-top: 2rem;
+                    padding: 1rem;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 1rem;
+
+                    .checkout-btn {
+                        background-color: black;
+                        color: white;
+                        border: none;
+                        padding: 0.75rem 1.5rem;
+                        font-size: 1.2rem;
+                        cursor: pointer;
+
+                        &:hover {
+                            background-color: #FF1A1A;
+                        }
+                    }
+                }
             }
         }
     }
