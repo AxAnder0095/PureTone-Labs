@@ -119,6 +119,7 @@ export const createCheckoutSession = async ({ cartItems, origin }) => {
 };
 
 export const finalizeOrderFromCheckoutSession = async (sessionId) => {
+    console.log("inside finalizeOrderFromCheckoutSession");
     const existingOrder = await Order.findOne({ checkoutSessionId: sessionId });
 
     if (!existingOrder) {
@@ -126,6 +127,7 @@ export const finalizeOrderFromCheckoutSession = async (sessionId) => {
     }
 
     if (existingOrder.isPaid) {
+        console.log("Order already marked as paid, skipping processing");
         return existingOrder;
     }
 
@@ -192,6 +194,28 @@ export const finalizeOrderFromCheckoutSession = async (sessionId) => {
         throw error;
     }
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 export const addOrder = async (orderData) => {
     const session = await mongoose.startSession();

@@ -95,11 +95,11 @@ export const stripeWebhook = async (req, res) => {
     }
 };
 
-export const completeOrder = async (req, res) => {
-    try{
-        const order = await orderService.markOrderAsPaid(req.params.id, req.body);
-        res.status(200).json(order);
-    }catch(error){
-        res.status(500).json({ message: error.message });
-    };
-};
+// export const completeOrder = async (req, res) => {
+//     try{
+//         const order = await orderService.markOrderAsPaid(req.params.id, req.body);
+//         res.status(200).json(order);
+//     }catch(error){
+//         res.status(500).json({ message: error.message });
+//     };
+// };

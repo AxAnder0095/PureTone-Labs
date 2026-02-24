@@ -10,6 +10,6 @@ router.get("/orders/by-checkout-session", orderControllers.getOrderByCheckoutSes
 // router.get("/orders/:userId",);
 
 router.post("/orders/checkout-session", orderControllers.createCheckoutSession);
-router.post("/orders", orderControllers.createOrder);
+// router.post("/orders", orderControllers.createOrder);
 
 export default router;
