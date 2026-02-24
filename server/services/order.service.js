@@ -131,9 +131,7 @@ export const finalizeOrderFromCheckoutSession = async (sessionId) => {
         return existingOrder;
     }
 
-    const checkoutSession = await stripe.checkout.sessions.retrieve(sessionId, {
-        expand: ["shipping_details"]
-    });
+    const checkoutSession = await stripe.checkout.sessions.retrieve(sessionId);
 
     const dbSession = await mongoose.startSession();
     dbSession.startTransaction();
