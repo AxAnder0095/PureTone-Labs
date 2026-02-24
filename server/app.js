@@ -3,7 +3,7 @@ import cors from 'cors';
 import testRoute from './routes/test.route.js';
 import productRoute from './routes/product.route.js';
 import orderRoutes from './routes/order.route.js';
-import webhookRoute from './routes/webhook.js';
+import { stripeWebhook } from './controllers/order.controller.js';
 
 // Create Express app
 const app = express();
@@ -13,7 +13,8 @@ app.use(cors({
 	origin: 'http://localhost:5173',
 }));
 
-app.use('/api', webhookRoute);
+app.post('/api/orders/webhook', express.raw({ type: 'application/json' }), stripeWebhook);
+
 app.use(express.json());
 
 // Routes

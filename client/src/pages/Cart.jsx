@@ -1,11 +1,16 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useProducts } from '../context/ProductsContext.jsx';
 import { Navbar } from '../components/Navbar.jsx';
+import { api } from '../api/api.js';
+// import { useNavigate } from 'react-router-dom';
 import "../styles/Cart.scss"
 
 export const Cart = () => {
     const { cart, setCart } = useProducts();
+    const [isCheckingOut, setIsCheckingOut] = useState(false);
+    const [isStripeTestMode, setIsStripeTestMode] = useState(false);
     const salesTaxRate = 0.07; // Example sales tax rate (7%)
+    // const navigate = useNavigate();
     // const [subtotal, setSubtotal] = useState(0);
     // const [finalTotal, setFinalTotal] = useState(0);
 
@@ -36,6 +41,43 @@ export const Cart = () => {
         return finalTotal.toFixed(2);
     };
 
+    useEffect(() => {
+        const fetchCheckoutConfig = async () => { // Check if Stripe is in test mode to show banner in cart
+            try {
+                const { data } = await api.get('/orders/checkout-config');
+                setIsStripeTestMode(Boolean(data?.isTestMode));
+            } catch (error) {
+                console.error('Checkout config error:', error);
+            }
+        };
+
+        fetchCheckoutConfig();
+    }, []);
+
+    const handleCheckout = async () => {
+        if (cart.length === 0 || isCheckingOut) {
+            return;
+        }
+
+        try {
+            setIsCheckingOut(true);
+            console.log(`Cart before checkout:`, cart[0]);
+
+            const { data } = await api.post('/orders/checkout-session', {
+                cartItems: cart
+            });
+
+            if (!data?.url) {
+                throw new Error('Unable to create checkout session.');
+            }
+
+            window.location.href = data.url;
+        } catch (error) {
+            console.error('Checkout error:', error);
+            alert(error?.response?.data?.message || 'Could not start Stripe checkout. Please try again.');
+            setIsCheckingOut(false);
+        }
+    };
 
     return (
         <div className='Cart'>
@@ -92,7 +134,16 @@ export const Cart = () => {
                         </div>
                         <div className='cart-summary-total'>
                             <p><span>Total:</span> ${getFinalTotal()}</p>
-                            <button className='checkout-btn'>Checkout</button>
+                            {isStripeTestMode && (
+                                <p className='test-mode-banner'>Test mode: use Stripe test card details only.</p>
+                            )}
+                            <button
+                                className='checkout-btn'
+                                onClick={handleCheckout}
+                                disabled={cart.length === 0 || isCheckingOut}
+                            >
+                                {isCheckingOut ? 'Redirecting...' : 'Checkout'}
+                            </button>
                         </div>
                     </div>
                 </article>

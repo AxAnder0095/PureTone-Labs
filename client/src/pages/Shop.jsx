@@ -1,12 +1,12 @@
 import { Navbar } from "../components/Navbar.jsx";
 import { useProducts } from '../context/ProductsContext.jsx';
-import { testData } from "../data/testData.jsx";
 import "../styles/Shop.scss"
 
 export const Shop = () => {
-    const { cart, setCart } = useProducts();
+    const { cart, setCart, products } = useProducts();
 
     const handleAddToCart = (product) => {
+        console.log("Adding to cart:", product);
 
         if (cart.some(item => item.brand === product.brand)) { // Check if the product is already in the cart
             alert("This item is already in your cart.");
@@ -27,19 +27,23 @@ export const Shop = () => {
                         <p className="shop-subtitle">Premium sound engineered for clarity and depth.</p>
                     </div>
                     <div className="shop-products">
-                        {testData.map((product, index) => (
-                            <div key={index} className="shop-product-card">
-                                <img src={product.image} alt={product.description} />
-                                <div className="shop-product-card-inner">
-                                    <div className="shop-product-card-header">
-                                        <p className="product-brand">{product.brand}</p>
-                                        <p className="product-price">${product.price}</p>
+                        {products.length === 0 ? (
+                            <p>Loading products...</p>
+                        ) : (
+                            products.map((product, index) => (
+                                <div key={index} className="shop-product-card">
+                                    <img src={product.image} alt={product.description} />
+                                    <div className="shop-product-card-inner">
+                                        <div className="shop-product-card-header">
+                                            <p className="product-brand">{product.brand}</p>
+                                            <p className="product-price">${product.price}</p>
+                                        </div>
+                                        <p className="product-description">{product.description}</p>
+                                        <button onClick={() => handleAddToCart(product)} className="atc-btn">Add to Cart</button>
                                     </div>
-                                    <p className="product-description">{product.description}</p>
-                                    <button onClick={() => handleAddToCart(product)} className="atc-btn">Add to Cart</button>
                                 </div>
-                            </div>
-                        ))}
+                            ))
+                        )}
                     </div>
                 </article>
             </section>
