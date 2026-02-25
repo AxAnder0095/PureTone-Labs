@@ -1,5 +1,6 @@
 import { Navbar } from "../components/Navbar.jsx";
 import { useProducts } from '../context/ProductsContext.jsx';
+import { Footer } from "../components/Footer.jsx";
 import "../styles/Shop.scss"
 
 export const Shop = () => {
@@ -46,42 +47,10 @@ export const Shop = () => {
                         )}
                     </div>
                 </article>
+                <article className="shop-footer">
+                    <Footer />
+                </article>
             </section>
         </div>
     )
 };
-//                 color: [
-//                     "Midnight Black",
-//                     "Arctic White"
-//                 ]
-//             }
-//         }
-//         ];
-//         setCart(newCart);
-//     }
-//     return (
-//         <div className='Shop'>
-//             <section className='shop-section'>
-//                 <article className='shop-nav'>
-//                     <Navbar />
-//                 </article>
-//                 <article className='shop-content'>
-//                     <div className="shop-hero">
-//                         <p className="shop-title">Shop</p>
-//                         <p className="shop-subtitle">Premium sound engineered for clarity and depth.</p>
-//                     </div>
-//                     <div className="shop-products">
-//                         {testData.map((product, index) => (
-//                             <div key={index} className="shop-product">
-//                                 <p>{product.brand}</p>
-//                                 <p>{product.description}</p>
-//                                 <p>${product.price}</p>
-//                                 <button onClick={handleAddToCart}>Add to Cart</button>
-//                             </div>
-//                         ))}
-//                     </div>
-//                 </article>
-//             </section>
-//         </div>
-//     )
-// };

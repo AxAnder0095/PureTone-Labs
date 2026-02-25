@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useProducts } from '../context/ProductsContext.jsx';
 import { Navbar } from '../components/Navbar.jsx';
+import { Footer } from '../components/Footer.jsx';
 import { api } from '../api/api.js';
-// import { useNavigate } from 'react-router-dom';
 import "../styles/Cart.scss"
 
 export const Cart = () => {
@@ -10,9 +10,6 @@ export const Cart = () => {
     const [isCheckingOut, setIsCheckingOut] = useState(false);
     const [isStripeTestMode, setIsStripeTestMode] = useState(false);
     const salesTaxRate = 0.07; // Example sales tax rate (7%)
-    // const navigate = useNavigate();
-    // const [subtotal, setSubtotal] = useState(0);
-    // const [finalTotal, setFinalTotal] = useState(0);
 
     const cartItems = () => {
         const count = cart.length;
@@ -87,7 +84,7 @@ export const Cart = () => {
                 <article className='cart-nav'>
                     <Navbar />
                 </article>
-                <button onClick={() => setCart([])}>Empty Cart</button>
+                <button className='empty-btn' onClick={() => setCart([])}>Empty Cart</button>
                 <article className='cart-content'>
                     <div className='cart-items'>
                         <div className='cart-items-header'>
@@ -131,8 +128,8 @@ export const Cart = () => {
                         </div>
                         <div className='cart-summary-subtotals'>
                             <p><span>Subtotal:</span> ${getSubtotal()}</p>
-                            <p><span>Standard Shipping:</span> $0.00</p>
-                            <p><span>Sales Tax:</span> ${(parseFloat(getSubtotal()) * salesTaxRate).toFixed(2)}</p>
+                            <p><span>Standard Shipping:</span> Free</p>
+                            <p><span>Sales Tax {"(estimate)"}:</span> ${(parseFloat(getSubtotal()) * salesTaxRate).toFixed(2)}</p>
                         </div>
                         <div className='cart-summary-total'>
                             <p><span>Total:</span> ${getFinalTotal()}</p>
@@ -150,6 +147,9 @@ export const Cart = () => {
                     </div>
                 </article>
             </section>
+            <article className="cart-footer">
+                <Footer />
+            </article>
         </div>
     )
 }

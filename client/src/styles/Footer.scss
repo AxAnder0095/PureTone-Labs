@@ -1,0 +1,135 @@
+.Footer {
+    background-color: #111111;
+    color: #FFFFFF;
+    width: 100%;
+    padding: 3rem 1.5rem 1.5rem;
+
+    .footer-inner {
+        width: 100%;
+        max-width: 1400px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: 2rem;
+    }
+
+    .footer-col {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+
+        h3,
+        h4 {
+            margin: 0;
+        }
+
+        h3 {
+            font-size: 1.4rem;
+        }
+
+        h4 {
+            font-size: 1rem;
+            opacity: 0.95;
+        }
+
+        p,
+        a {
+            margin: 0;
+            color: #FFFFFF;
+            opacity: 0.85;
+            text-decoration: none;
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }
+
+        a:hover {
+            opacity: 1;
+            text-decoration: underline;
+        }
+    }
+
+    .footer-brand {
+        .footer-trust {
+            opacity: 1;
+        }
+    }
+
+    .newsletter-row {
+        display: flex;
+        gap: 0.5rem;
+        margin-top: 0.25rem;
+
+        input {
+            width: 100%;
+            max-width: 220px;
+            padding: 0.65rem 0.75rem;
+            border: 1px solid #FFFFFF;
+            background: transparent;
+            color: #FFFFFF;
+            outline: none;
+        }
+
+        input::placeholder {
+            color: #FFFFFF;
+            opacity: 0.7;
+        }
+
+        button {
+            border: 1px solid #FFFFFF;
+            background: transparent;
+            color: #FFFFFF;
+            padding: 0.65rem 0.9rem;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #FFFFFF;
+            color: #111111;
+        }
+    }
+
+    .footer-bottom {
+        width: 100%;
+        max-width: 1400px;
+        margin: 2rem auto 0;
+        padding-top: 1rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.25);
+
+        p {
+            margin: 0;
+            opacity: 0.75;
+            font-size: 0.9rem;
+        }
+    }
+}
+
+@media (max-width: 1100px) {
+    .Footer {
+        .footer-inner {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+    }
+}
+
+@media (max-width: 760px) {
+    .Footer {
+        padding: 2rem 1rem 1.2rem;
+
+        .footer-inner {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        .newsletter-row {
+            flex-direction: column;
+
+            input {
+                max-width: 100%;
+            }
+
+            button {
+                width: fit-content;
+            }
+        }
+    }
+}

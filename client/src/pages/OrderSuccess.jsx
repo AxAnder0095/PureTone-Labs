@@ -4,6 +4,8 @@ import { Navbar } from '../components/Navbar.jsx';
 import { useProducts } from '../context/ProductsContext.jsx';
 import { api } from '../api/api.js';
 import '../styles/OrderSuccess.scss';
+import { FaCheckCircle } from "react-icons/fa";
+
 
 export const OrderSuccess = () => {
     const [searchParams] = useSearchParams();
@@ -46,11 +48,13 @@ export const OrderSuccess = () => {
     return (
         <div className='OrderSuccess'>
             <section className='order-success-section'>
-                <article className='order-success-nav'>
+                {/* <article className='order-success-nav'>
                     <Navbar />
-                </article>
+                </article> */}
                 <article className='order-success-content'>
-                    <h1>Order Confirmation</h1>
+                    <div className='success-icon'><FaCheckCircle size={100} color="#4BB543" /></div>
+                    <h1>Thank you for your order!</h1>
+                    <h3>Order Conformation</h3>
                     {isLoading && <p>Loading your order...</p>}
                     {!isLoading && error && (
                         <div className='order-error'>
@@ -66,7 +70,7 @@ export const OrderSuccess = () => {
                             <p><span>Paid:</span> {order.isPaid ? 'Yes' : 'No'}</p>
                             <p><span>Total:</span> ${order.totalPrice?.toFixed?.(2) ?? order.totalPrice}</p>
                             <p><span>Email:</span> {order.customerInfo?.email || 'N/A'}</p>
-                            <p><span>Shipping:</span> {order.shippingAddress?.address || 'N/A'}</p>
+                            {/* <p><span>Shipping:</span> {order.shippingAddress?.address || 'N/A'}</p> */}
                             <div className='order-items'>
                                 <h2>Items</h2>
                                 <ul>
